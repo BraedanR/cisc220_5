@@ -1,12 +1,12 @@
 #ifndef UDLL_H
 #define UDLL_H
 
-void insert(int index, union Data data);
+void insert(int index, union Data data, int type);
 
-void remove(int index);
+void removeNode(int index);
 
 union Data get(int index);
 
-int length():
+int length();
 
 #endif
