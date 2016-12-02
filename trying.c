@@ -73,5 +73,31 @@ newNode->next = temp->next; //index+1 node
 
 free(temp);
 return;
-
 }
+
+//returns node data at given index
+union Data get(int index) {
+
+int count=0; //initialize index
+struct node* current = head;
+int length = head->data;
+
+if (index <= 0 || index > length) {
+	printf("No node at this index!\n");
+	exit(-1); //error
+} else { 
+	while (current != NULL) { //loop through link list
+		if (count == index)
+			return current->data;//or current.data //minimum number of iterations
+		count++;
+		current = current->next; //next node if not correct index
+	}
+}
+}
+
+//returns the length of the linked list
+int length() {
+	return head->data; //where the length is stored 
+}
+
+
