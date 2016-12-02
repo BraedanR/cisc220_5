@@ -23,14 +23,15 @@ struct Node {
 struct Node *last = NULL;
 struct Node *head; //global
 struct Node *afterhead; //global
+head->data = NULL
+head->next = afterhead;
+head->type = 0;
 
 int main() {
   afterhead = NULL; //empty list
   union Data data;
   data.i = 0;
   insert(0, data.i, 0); //start length
-  head->type = 0;
-  head->next = afterhead;
   data.i = 10;
   insert(1, data, 0);
   data.f = 15.45;

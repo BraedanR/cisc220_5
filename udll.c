@@ -6,7 +6,7 @@
 
 void insert(int index, union Data data, int type) {
 
-head->data = (head->data)+1;
+*head->data = (head->data)+1;
 
 int count = 0;
 
@@ -16,16 +16,16 @@ newNode->type = type;
 newNode->next = NULL;
 newNode->type = type;
 
-struct Node* current = head;
+struct Node* current = afterhead;
 
 if (index == 0) {
-	newNode->next = head->next;
-	head->next = NewNode;
-	newNode->prev = head;
+	newNode->next = afterhead;
+	afterhead->next = NewNode;
+	newNode->prev = afterhead;
 	return;
 } 
 
-struct Node* temp = head->next;
+struct Node* temp = afterhead;
 temp->type = NULL;
 
 for (int i=0; i < index-2; i++) {
@@ -47,7 +47,7 @@ void removeNode(int index) {
 
 head->data = (head->data)-1;
 
-struct Node* newNode = head->next;
+struct Node* newNode = afterhead;
 int count;
 
 for (count = 0; count < index-2; count++) {
@@ -65,7 +65,7 @@ return;
 union Data get(int index) {
 
 int count=0; //initialize index
-struct node* current = head;
+struct node* current = afterhead;
 int length = head->data;
 
 if (index <= 0 || index > length) {
