@@ -23,7 +23,7 @@ struct Node {
 struct Node *last = NULL;
 struct Node *head; //global
 struct Node *afterhead; //global
-head->data = NULL
+head->data = NULL;
 head->next = afterhead;
 head->type = 0;
 
