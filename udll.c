@@ -4,20 +4,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Data {
-  struct Node* prev;
-  struct Node* next;
-  int type;
-  union Data data;
-};
-
-struct Node *last = NULL;
-struct Node *head; //global
-struct Node *afterhead; //global
-head->data = 0; //start length
-head->type = 0;
-head->next = afterhead;
-
 void insert(int index, union Data data, int type) {
 
 head->data = (head->data)+1;
