@@ -28,7 +28,7 @@ int main() {
   afterhead = NULL; //empty list
   union Data data;
   data.i = 0;
-  insert(0, data, 0); //start length
+  insert(0, data.i, 0); //start length
   head->type = 0;
   head->next = afterhead;
   data.i = 10;
