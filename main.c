@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "udll.h"
 
-union Data {
+typedef union Data {
 
   int i;
   int* iPtr;
@@ -11,7 +11,7 @@ union Data {
   float* fPtr;
   char c[20];
   char* cPtr;
-};
+} Data;
 
 struct Node {
   struct Node* prev;
@@ -26,7 +26,7 @@ struct Node *afterhead; //global
 
 int main() {
   afterhead = NULL; //empty list
-  union Data data;
+  Data data;
   head->data = 0; //start length
   head->type = 0;
   head->next = afterhead;
