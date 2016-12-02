@@ -25,5 +25,7 @@ int main() {
   removeNode(2);
   removeNode(1);
   length();
+  
+  free(newNode);
 return 0;
 }
