@@ -20,13 +20,6 @@ struct Node {
   union Data data;
 };
 
-struct Node *last = NULL;
-struct Node *head; //global
-struct Node *afterhead; //global
-head->data = NULL
-head->next = afterhead;
-head->type = 0;
-
 int main() {
   afterhead = NULL; //empty list
   union Data data;
