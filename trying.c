@@ -7,6 +7,7 @@
 struct Data {
   struct Node* prev;
   struct Node* next;
+  int type;
   union Data data;
 };
 
@@ -14,30 +15,18 @@ struct Node *last = NULL;
 struct Node *head; //global
 struct Node *afterhead; //global
 head->data = 0; //start length
+head->type = 0;
 head->next = afterhead;
 
 void insert(int index, union Data data, int type) {
 
-head->data.i = (head->data.i)+1;
-
-if (type == 0) {
-	data = data.i;
-} else if (type == 1) {
-	data = data.iPtr;
-} else if (type == 2) {
-	data = data.f;
-} else if (type == 3) {
-	data = data.fPtr;
-} else if (type == 4) {
-	data = data.c;
-} else if (type == 5) {
-	data = data.cPtr;
-}
+head->data = (head->data)+1;
 
 int count = 0;
 
 struct Node* newNode = (Node*) malloc(sizeof(struct Node*));
 newNode->data = data;
+newNode->type = type;
 newNode->next = NULL;
 newNode->type = type;
 
@@ -51,6 +40,7 @@ if (index == 0) {
 } 
 
 struct Node* temp = head->next;
+temp->type = NULL;
 
 for (int i=0; i < index-2; i++) {
 	temp = temp->next
@@ -69,7 +59,7 @@ return;
 
 void removeNode(int index) {
 
-head->data.i = (head->data.i)-1;
+head->data = (head->data)-1;
 
 struct Node* newNode = head->next;
 int count;
