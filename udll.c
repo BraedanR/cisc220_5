@@ -7,14 +7,14 @@
 struct Node *last = NULL;
 struct Node *head; //global
 struct Node *afterhead; //global
-head->data = NULL
+head.data = NULL
 head->next = afterhead;
 head->type = 0;
 
 void insert(int index, union Data data, int type) {
 
 if (head->data == NULL) {
-	head->data = 0;
+	head.data = 0;
 } else {
 	head->data = (head->data)+1;
 }
