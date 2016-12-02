@@ -13,9 +13,23 @@ union Data {
   char* cPtr;
 };
 
+struct Node {
+  struct Node* prev;
+  struct Node* next;
+  int type;
+  union Data data;
+};
+
+struct Node *last = NULL;
+struct Node *head; //global
+struct Node *afterhead; //global
+
 int main() {
   afterhead = NULL; //empty list
   union Data data;
+  head->data = 0; //start length
+  head->type = 0;
+  head->next = afterhead;
   data.i = 10;
   insert(1, data, 0);
   data.f = 15.45;
