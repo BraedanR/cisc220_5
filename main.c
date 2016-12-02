@@ -14,16 +14,16 @@ union Data {
 };
 
 int main() {
-  int index = 1;
+  afterhead = NULL; //empty list
   union Data data;
   data.i = 10;
-  insert(index, data, 0);
+  insert(1, data, 0);
   data.f = 15.45;
-  index = 2;
-  insert(index,data,2); 
-  index = 3;
-  removeNode(index);
-  index = 1; 
-  removeNode(index);
+  insert(2,data,2);
+  get(1);
+  length();
+  removeNode(2);
+  removeNode(1);
+  length();
 return 0;
 }
