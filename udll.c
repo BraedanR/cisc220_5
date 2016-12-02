@@ -27,7 +27,7 @@ struct Node* current = afterhead;
 
 if (index == 0) {
 	newNode->next = afterhead;
-	afterhead->next = NewNode;
+	afterhead->next = newNode;
 	newNode->prev = afterhead;
 	return;
 } 
@@ -36,7 +36,7 @@ struct Node* temp = afterhead;
 temp->type = NULL;
 
 for (int i=0; i < index-2; i++) {
-	temp = temp->next
+	temp = temp->next;
 }
 
 if (temp->next == NULL) { //if index is the end of the list
@@ -72,7 +72,7 @@ return;
 union Data get(int index) {
 
 int count=0; //initialize index
-struct node* current = afterhead;
+struct Node* current = afterhead;
 int length = head->data;
 
 if (index <= 0 || index > length) {
