@@ -31,7 +31,7 @@ int main() {
   afterhead = NULL; //empty list
   union Data data;
   data.i = 0;
-  insert(0, data.i, 0); //start length
+  insert(0, data, 0); //start length
   data.i = 10;
   insert(1, data, 0);
   data.f = 15.45;
