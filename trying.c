@@ -7,19 +7,32 @@
 struct Data {
   struct Node* prev;
   struct Node* next;
-  int type;
-  int data;
+  union Data data;
 };
 
 struct Node *last = NULL;
 struct Node *head; //global
 struct Node *afterhead; //global
-head->data = Data.len; //?
+head->data = 0; //start length
 head->next = afterhead;
 
-//main: afterhead = NULL; //empty list
-
 void insert(int index, union Data data, int type) {
+
+head->data.i = (head->data.i)+1;
+
+if (type == 0) {
+	data = data.i;
+} else if (type == 1) {
+	data = data.iPtr;
+} else if (type == 2) {
+	data = data.f;
+} else if (type == 3) {
+	data = data.fPtr;
+} else if (type == 4) {
+	data = data.c;
+} else if (type == 5) {
+	data = data.cPtr;
+}
 
 int count = 0;
 
@@ -56,6 +69,8 @@ return;
 
 void removeNode(int index) {
 
+head->data.i = (head->data.i)-1;
+
 struct Node* newNode = head->next;
 int count;
 
@@ -63,8 +78,8 @@ for (count = 0; count < index-2; count++) {
 	newNode = newNode->next;
 }
  //newNode points to (index-1) node
-struct Node* temp = newNode->next; //nth node
-newNode->next = temp->next; //n+1 node
+struct Node* temp = newNode->next; //indexth node
+newNode->next = temp->next; //index+1 node
 
 free(temp);
 return;
