@@ -4,13 +4,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node *last = NULL;
-struct Node *head; //global
-struct Node *afterhead; //global
-head->data = NULL
-head->next = afterhead;
-head->type = 0;
-
 void insert(int index, union Data data, int type) {
 
 if (head->data == NULL) {
