@@ -26,8 +26,9 @@ struct Node *afterhead; //global
 
 int main() {
   afterhead = NULL; //empty list
-  Data data;
-  head->data = 0; //start length
+  union Data data;
+  data.i = 0;
+  insert(0, data, 0); //start length
   head->type = 0;
   head->next = afterhead;
   data.i = 10;
@@ -40,6 +41,5 @@ int main() {
   removeNode(1);
   length();
   
-  free(newNode);
 return 0;
 }
