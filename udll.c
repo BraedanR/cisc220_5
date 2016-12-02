@@ -73,8 +73,12 @@ union Data get(int index) {
 
 int count=0; //initialize index
 struct Node* current = afterhead;
+int length = head->data;
 
-while (current != NULL) { //loop through link list
+if (index <= 0 || index > length) {
+	printf("No node at this index!\n");
+	exit(-1); //error
+} else { while (current != NULL) { //loop through link list
 		if (count == index)
 			return current->data;//or current.data //minimum number of iterations
 		count++;
