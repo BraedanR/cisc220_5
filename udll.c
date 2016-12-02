@@ -11,7 +11,7 @@ head->data = NULL
 head->next = afterhead;
 head->type = 0;
 
-void insert(int index, union Data data, int type) {
+void insert(int index, union data, int type) {
 
 head->data = (head->data)+1;
 
