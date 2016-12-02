@@ -13,11 +13,11 @@ head->type = 0;
 
 void insert(int index, union Data data, int type) {
 
-*head->data = (head->data)+1;
+head->data = (head->data)+1;
 
 int count = 0;
 
-struct Node* newNode = (Node*) malloc(sizeof(struct Node*));
+struct Node* newNode = malloc(sizeof(struct Node*));
 newNode->data = data;
 newNode->type = type;
 newNode->next = NULL;
@@ -73,13 +73,8 @@ union Data get(int index) {
 
 int count=0; //initialize index
 struct Node* current = afterhead;
-int length = head->data;
 
-if (index <= 0 || index > length) {
-	printf("No node at this index!\n");
-	exit(-1); //error
-} else { 
-	while (current != NULL) { //loop through link list
+while (current != NULL) { //loop through link list
 		if (count == index)
 			return current->data;//or current.data //minimum number of iterations
 		count++;
