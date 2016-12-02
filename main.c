@@ -11,7 +11,7 @@ typedef union Data {
   float* fPtr;
   char c[20];
   char* cPtr;
-} Data;
+};
 
 struct Node {
   struct Node* prev;
